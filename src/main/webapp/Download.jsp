@@ -21,7 +21,7 @@
             <h1>Pdf created successfully</h1>
             <button>Download</button>
         </form>
-        <button><a href="http://localhost:8080/pdfgene" style='text-decoration: none;color:Black;'>Back</a></button>
+        <button><a href="/pdfgene" style='text-decoration: none;color:Black;'>Back</a></button>
         </center>
     </body>
 </html>
