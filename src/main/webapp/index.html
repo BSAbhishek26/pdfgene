@@ -12,12 +12,12 @@
     <center>
         <h1><img src="images/favicon.png" alt="PDF" width="27" height="25"> PDF Generation</h1><!-- comment -->
         <form action="PDF" method="POST">
-            File Name: <input type="text" id="text1" name="filename" ><br><br>
+            File Name: <input type="text" class="input" id="text1" name="filename" ><br><br>
             Person1 Name: <input type="text" id="text1" name="text1" ><br><br>
             Person2 Name: <input type="text" id="text2" name="text2" ><br><br>
         <input type="submit">
          <input type="reset" value="Reset">
-        <!--<button type="button" onclick="my()">Submit</button>-->
+        <!--<button type="button" class="button" onclick="my()">Submit</button>-->
         </form>
     </center>   
 </body>
@@ -47,6 +47,24 @@
                 }
             })
         }
+
+
+//Program to disable or enable a button using javascript
+
+    let input = document.querySelector(".input");
+let button = document.querySelector(".button");
+
+button.disabled = true; //setting button state to disabled
+
+input.addEventListener("change", stateHandle);
+
+function stateHandle() {
+    if (document.querySelector(".input").value === "") {
+        button.disabled = true; //button remains disabled
+    } else {
+        button.disabled = false; //button is enabled
+    }
+}
 
 </script>
 </html> 
