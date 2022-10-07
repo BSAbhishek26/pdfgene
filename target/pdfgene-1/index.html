@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery.min.js" type="text/javascript"></script>
+        <title>PDF</title>
+        <link rel="icon" href="images/favicon.png" type="image/png" />
+        
+    <body>
+    <center>
+        <h1><img src="images/favicon.png" alt="PDF" width="27" height="25"> PDF Generation</h1><!-- comment -->
+        <form action="PDF" method="POST">
+            File Name: <input type="text" id="text1" name="filename" ><br><br>
+            Person1 Name: <input type="text" id="text1" name="text1" ><br><br>
+            Person2 Name: <input type="text" id="text2" name="text2" ><br><br>
+        <input type="submit">
+         <input type="reset" value="Reset">
+        <!--<button type="button" onclick="my()">Submit</button>-->
+        </form>
+    </center>   
+</body>
+<script type="text/javascript">
+
+    function my() {
+//var filearray = {}
+//var idarray = {}
+//var count = 0;
+//        
+//        var fileInput = document.getElementById('file');
+//        var fd = new FormData();
+//    fd.append('file', filearray[0]);
+
+        var name1 = $('#text1').val();
+        var name2 = $('#text2').val();
+        
+
+            $.ajax({
+                url: 'PDF',
+                type: 'GET',
+                data: {"name1":name1,"name2":name2},
+
+                success: function (ajaxData) {
+                    console.log(ajaxData);
+                    window.location.href = ajaxData
+                }
+            })
+        }
+
+</script>
+</html> 
