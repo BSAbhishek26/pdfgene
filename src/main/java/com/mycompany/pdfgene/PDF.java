@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.pdfgene;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +30,7 @@ import java.io.PrintWriter;
  *
  * @author abhi
  */
-//@WebServlet(urlPatterns = "/PDF")
+
 public class PDF extends HttpServlet {
 
     public static PdfPCell getCell(String text, int alignment) {
@@ -76,8 +69,12 @@ public class PDF extends HttpServlet {
             //Open the document.
             document.open();
 
-            String Person1Name = request.getParameter("text1");
-            String Person2Name = request.getParameter("text2");
+            String Person1Name = request.getParameter("Name1");
+            String Person1Mobile = request.getParameter("Mobile1");
+            String Person1Email = request.getParameter("Email1");
+            String Person2Name = request.getParameter("Name2");
+            String Person2Mobile = request.getParameter("Mobile2");
+            String Person2Email = request.getParameter("Email2");
             Font f = new Font(FontFamily.HELVETICA, 14, Font.BOLD, BaseColor.BLACK);
 
             Paragraph p1 = new Paragraph("CONTRACT AGREEMENT", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD, BaseColor.BLACK));
@@ -216,11 +213,11 @@ public class PDF extends HttpServlet {
             table5.addCell(""+Person1Name+",");
             table5.addCell(""+Person2Name+",");
 
-            table5.addCell("9123456780,");
-            table5.addCell("9012345678,");
+            table5.addCell(""+Person1Mobile+",");
+            table5.addCell(""+Person2Mobile+",");
 
-            table5.addCell("sample1@gmail.com,");
-            table5.addCell("sample2@gmail.com,");
+            table5.addCell(""+Person1Email+",");
+            table5.addCell(""+Person1Email+",");
 
             table5.addCell("eMudhra1,");
             table5.addCell("eMudhra2,");
